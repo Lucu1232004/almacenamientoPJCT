@@ -1,0 +1,1112 @@
+{
+    "modelName": "New Model",
+    "collections": [
+        {
+            "collectionName": "Registro",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "idUsuario NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "properties": [],
+                    "GUID": "8bc42c50-a750-4d36-aa88-22951ec9dbb7",
+                    "primaryKey": false,
+                    "deprecated": false,
+                    "writeOnly": false,
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                    "foreignField": [
+                        "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                        "efbe9541-5e80-45aa-ab6f-4e087b264400"
+                    ],
+                    "parentRelationship": "947cecff-0a81-455d-a23a-5d788116dd2e"
+                },
+                {
+                    "type": "numeric",
+                    "properties": [],
+                    "name": "idRegistro NOT NULL AUTO_INCREMENT",
+                    "isActivated": true,
+                    "GUID": "239e6de5-2bd0-428a-a6aa-61bbb349a472",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "primaryKey": true,
+                    "error": {}
+                },
+                {
+                    "name": "Username VARCHAR(255) NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "45ddbeaf-b10e-4883-82e7-d13085061568",
+                    "error": {}
+                },
+                {
+                    "name": "Password VARCHAR(20) NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "7f6bbefe-5d27-4f07-a1e6-f0cf3a178fbb",
+                    "error": {}
+                },
+                {
+                    "name": "Rol ENUM {'Administrador','Cliente'} NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "f6764b3c-5dc8-40af-8b84-1c6d26d52d30",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "5381ac0c-5c99-4cca-aacf-55e5586b091a"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "4c2db67c-fe2f-4661-9ee7-12d3c0907fec"
+        },
+        {
+            "collectionName": "Usuario",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "idUsuario NOT NULL AUTO INCREMENT",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "properties": [],
+                    "GUID": "efbe9541-5e80-45aa-ab6f-4e087b264400",
+                    "primaryKey": true,
+                    "childRelationships": [
+                        "947cecff-0a81-455d-a23a-5d788116dd2e",
+                        "3b14d4fb-f435-4ffc-b4ed-7f97fa763524"
+                    ],
+                    "error": {}
+                },
+                {
+                    "name": "Nombre VARCHAR NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "43946bb4-fa62-4a2b-b20c-e513670a5dc1",
+                    "error": {}
+                },
+                {
+                    "name": "Correo VARCHAR NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "72d22614-e655-45f4-a7b9-8ce70d2e2581",
+                    "error": {}
+                },
+                {
+                    "name": "Telefono INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "408d5be1-3287-48cc-a2ac-95180c0bcf86",
+                    "error": {},
+                    "childRelationships": [
+                        "8bdfc801-9359-40b4-9624-dbdd4e78bf5c"
+                    ]
+                },
+                {
+                    "name": "Genero ENUM {'H'.'M'} NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "095c8a69-501f-4ae2-b423-6c5a1ceb1ef4",
+                    "error": {}
+                },
+                {
+                    "name": "Edad",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "0d0b67e7-e331-4eda-86f2-f414cb39e880",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "5918eb53-d72d-4559-b26a-61c62ab95325"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "05bd1d97-9456-4183-a657-09e6aa4cc097"
+        },
+        {
+            "collectionName": "Reseña",
+            "type": "object",
+            "properties": [
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "25477e4a-01c8-4f54-adb8-594bf15fcff2",
+                    "name": "idReseña INT NOT NULL",
+                    "primaryKey": true,
+                    "error": {}
+                },
+                {
+                    "name": "idUsuario NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "properties": [],
+                    "GUID": "39a1f7e3-1d93-416a-981b-26d009550689",
+                    "foreignCollection": "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                    "foreignField": [
+                        "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                        "efbe9541-5e80-45aa-ab6f-4e087b264400"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "3b14d4fb-f435-4ffc-b4ed-7f97fa763524",
+                    "error": {}
+                },
+                {
+                    "name": "idProducto INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "2e051156-8053-4272-b187-58b4d2393fa1",
+                    "foreignCollection": "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                    "foreignField": [
+                        "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                        "a377f575-d3bf-4494-884a-7ba587bb1a18"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "4e8ee2d5-ddeb-4af7-b9f7-7111e3f0dfc8",
+                    "error": {}
+                },
+                {
+                    "name": "Comentarios VARCHAR(255)",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "d660695d-780d-4a2f-82fc-b9c927bff0a2",
+                    "error": {}
+                },
+                {
+                    "name": "Valoraciones ENUM {'MuyMala','Mala','Neutra',Buena','MuyBuena'} NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "da8264fd-5055-4fcf-9d08-91327bd0c065",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "36b30cb2-774e-44ab-9e11-d02727e4a279"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "206060f8-ee54-4d43-b926-e0691cf2bf4c"
+        },
+        {
+            "collectionName": "Compra",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "idCompra INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "f75338a9-ddbf-489e-94c4-903080d99885",
+                    "primaryKey": true,
+                    "error": {},
+                    "childRelationships": [
+                        "946fdca1-55f6-440b-be71-ec51868ae1ba"
+                    ]
+                },
+                {
+                    "name": "idUsuario INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "609e1583-afd4-40d2-915c-0c6898eb2cff",
+                    "foreignCollection": "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                    "foreignField": [
+                        "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                        "408d5be1-3287-48cc-a2ac-95180c0bcf86"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "8bdfc801-9359-40b4-9624-dbdd4e78bf5c",
+                    "error": {}
+                },
+                {
+                    "name": "FechaCompra DATE NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "7323333e-aaa6-4921-8245-055fd3ef1c98",
+                    "error": {}
+                },
+                {
+                    "name": "CostoTotal DOUBLE NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "properties": [],
+                    "GUID": "73ec8920-46c7-4695-bcf5-513dd45f9582",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "7c18e13b-27a2-4500-94ee-bbc6d373e16c"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "2ef8a707-fe80-45f6-940e-02da2ff518cc"
+        },
+        {
+            "collectionName": "Producto",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "idProducto INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "a377f575-d3bf-4494-884a-7ba587bb1a18",
+                    "primaryKey": true,
+                    "error": {},
+                    "childRelationships": [
+                        "4e8ee2d5-ddeb-4af7-b9f7-7111e3f0dfc8",
+                        "6e4eeacc-9a4b-497f-91eb-baa96fcc11cc",
+                        "a1e61d21-f370-4025-9272-c2293c57238b"
+                    ]
+                },
+                {
+                    "name": "Precio INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "c45b0e3d-93a7-4bc3-b873-d3d1c732ea3e",
+                    "error": {}
+                },
+                {
+                    "name": "Imagen BLOB",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [],
+                    "additionalProperties": false,
+                    "GUID": "d08e1090-171f-4962-ba34-82b0cae59ea5",
+                    "error": {}
+                },
+                {
+                    "name": "Tipo ENUM {'Articulo'.'Diseño'} NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "85de0885-c399-422b-b57b-342a6caea89a",
+                    "error": {}
+                },
+                {
+                    "name": "Cantidad INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "42d3070a-dc2f-4309-ae77-ebc7eec5a00b",
+                    "error": {}
+                },
+                {
+                    "name": "Seccion ENUM {'Hombre','Mujer','Niño'} NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "0098fad0-21fd-4d8f-8013-060f086258f2",
+                    "error": {}
+                },
+                {
+                    "name": "Atuendos ENUM {'Sudaderas','Camisetas','Calcetines','Pantalonetas','Leggins',Zapatillas'}'",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "80bfd961-39e1-4ada-a0d1-539659c018e7",
+                    "error": {}
+                },
+                {
+                    "name": "Talla_Unica",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "properties": [],
+                    "GUID": "a7e940a5-07c9-4042-9ca5-597f1c393076",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "d2cc4659-0cbe-49bb-9064-75be5512ae30"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "91715a7a-19af-440e-81ff-1bcdc854dc0e"
+        },
+        {
+            "collectionName": "Paquete",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "idPaquete INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "f2e378b9-7b52-4206-ad4c-b291feb57ee5",
+                    "primaryKey": true,
+                    "error": {}
+                },
+                {
+                    "name": "idProducto INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "4e701b1d-942f-4277-b9cd-8336d3d61e3a",
+                    "foreignCollection": "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                    "foreignField": [
+                        "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                        "a377f575-d3bf-4494-884a-7ba587bb1a18"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "6e4eeacc-9a4b-497f-91eb-baa96fcc11cc",
+                    "error": {}
+                },
+                {
+                    "name": "Precio INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "65638d12-924b-41e0-b459-ce1f90956e51",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "712c1729-c6e5-41cb-a6ae-30419ffccce0"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "5e148546-c330-430c-be7d-58145128baf2"
+        },
+        {
+            "collectionName": "Contiene",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "idCompra INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "0359f74a-1116-4187-abd0-0c085724a556",
+                    "primaryKey": true,
+                    "foreignCollection": "2ef8a707-fe80-45f6-940e-02da2ff518cc",
+                    "foreignField": [
+                        "2ef8a707-fe80-45f6-940e-02da2ff518cc",
+                        "f75338a9-ddbf-489e-94c4-903080d99885"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "946fdca1-55f6-440b-be71-ec51868ae1ba",
+                    "error": {}
+                },
+                {
+                    "name": "idProducto INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "4d90991d-0838-4d94-bb95-6a946aab381f",
+                    "primaryKey": true,
+                    "foreignCollection": "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                    "foreignField": [
+                        "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                        "a377f575-d3bf-4494-884a-7ba587bb1a18"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "a1e61d21-f370-4025-9272-c2293c57238b",
+                    "error": {}
+                },
+                {
+                    "name": "Cantidad INT NOT NULL",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "integer",
+                    "properties": [],
+                    "GUID": "4d8ae404-d923-4919-bcdc-4858304c1578",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "e9d5fa1b-3845-4acb-98c7-d19c73ef869a"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "4200bc40-e94f-4fd4-9c9e-2277fb107aa9"
+        },
+        {
+            "collectionName": "Envio",
+            "type": "object",
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "1abf712c-07a3-42ff-b71a-17149ff5971e"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "dcdbd11f-174a-431f-8151-c1617c4341fb"
+        }
+    ],
+    "buckets": [],
+    "views": [],
+    "relationships": [
+        {
+            "name": "OT NULL to Usuario.New FieldidUsuario NOT NULL AUTO INCREMENT",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                    "efbe9541-5e80-45aa-ab6f-4e087b264400"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "4c2db67c-fe2f-4661-9ee7-12d3c0907fec",
+                    "8bc42c50-a750-4d36-aa88-22951ec9dbb7"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "05bd1d97-9456-4183-a657-09e6aa4cc097",
+            "childCollection": "4c2db67c-fe2f-4661-9ee7-12d3c0907fec",
+            "GUID": "947cecff-0a81-455d-a23a-5d788116dd2e",
+            "hackoladeStyles": {
+                "GUID": "4ce3589c-caec-43f4-af33-b52347dbadc9",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1241.5,
+                        "y": 1201
+                    },
+                    {
+                        "x": 1241.5,
+                        "y": 1245.2168674698796
+                    },
+                    {
+                        "x": 1216.9561101549043,
+                        "y": 1245.2168674698796
+                    },
+                    {
+                        "x": 1216.9561101549043,
+                        "y": 1289.433734939759
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            }
+        },
+        {
+            "name": "New Relationship",
+            "relationshipType": "",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childField": [],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "2cd3aed0-7578-4319-b6f6-b51e27e15a75"
+        },
+        {
+            "name": "fk Reseña.idUsuario NOT NULL to Usuario.idUsuario NOT NULL AUTO INCREMENT",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                    "efbe9541-5e80-45aa-ab6f-4e087b264400"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "206060f8-ee54-4d43-b926-e0691cf2bf4c",
+                    "39a1f7e3-1d93-416a-981b-26d009550689"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "3b14d4fb-f435-4ffc-b4ed-7f97fa763524",
+            "parentCollection": "05bd1d97-9456-4183-a657-09e6aa4cc097",
+            "childCollection": "206060f8-ee54-4d43-b926-e0691cf2bf4c",
+            "hackoladeStyles": {
+                "GUID": "c59f84fd-d340-4542-bff8-2a4647525a37",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 912.7659208261618,
+                        "y": 1367.228055077453
+                    },
+                    {
+                        "x": 985.6110154905331,
+                        "y": 1367.228055077453
+                    },
+                    {
+                        "x": 985.6110154905331,
+                        "y": 1359.933734939759
+                    },
+                    {
+                        "x": 1058.4561101549043,
+                        "y": 1359.933734939759
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk Reseña.idProducto INT NOT NULL to Producto.idProducto INT NOT NULL",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                    "a377f575-d3bf-4494-884a-7ba587bb1a18"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "206060f8-ee54-4d43-b926-e0691cf2bf4c",
+                    "2e051156-8053-4272-b187-58b4d2393fa1"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "4e8ee2d5-ddeb-4af7-b9f7-7111e3f0dfc8",
+            "parentCollection": "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+            "childCollection": "206060f8-ee54-4d43-b926-e0691cf2bf4c",
+            "hackoladeStyles": {
+                "GUID": "ad58266e-69b6-4279-919d-898d1bd8b7ea",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 630.7659208261618,
+                        "y": 1480.728055077453
+                    },
+                    {
+                        "x": 630.7659208261618,
+                        "y": 1567.6973608720596
+                    },
+                    {
+                        "x": 1103.333333333333,
+                        "y": 1567.6973608720596
+                    },
+                    {
+                        "x": 1103.333333333333,
+                        "y": 1654.666666666666
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            }
+        },
+        {
+            "name": "fk Paquete.idProducto INT NOT NULL to Producto.idProducto INT NOT NULL",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                    "a377f575-d3bf-4494-884a-7ba587bb1a18"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "5e148546-c330-430c-be7d-58145128baf2",
+                    "4e701b1d-942f-4277-b9cd-8336d3d61e3a"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "6e4eeacc-9a4b-497f-91eb-baa96fcc11cc",
+            "parentCollection": "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+            "childCollection": "5e148546-c330-430c-be7d-58145128baf2",
+            "hackoladeStyles": {
+                "GUID": "082ccdc2-76fb-4670-98b8-b149df81696a",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1317.4999999999986,
+                        "y": 1942.6666666666663
+                    },
+                    {
+                        "x": 1317.4999999999986,
+                        "y": 1885.166666666666
+                    },
+                    {
+                        "x": 1103.333333333333,
+                        "y": 1885.166666666666
+                    },
+                    {
+                        "x": 1103.333333333333,
+                        "y": 1827.666666666666
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk Contiene.idProducto INT NOT NULL to Producto.idProducto INT NOT NULL",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                    "a377f575-d3bf-4494-884a-7ba587bb1a18"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "4200bc40-e94f-4fd4-9c9e-2277fb107aa9",
+                    "4d90991d-0838-4d94-bb95-6a946aab381f"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "a1e61d21-f370-4025-9272-c2293c57238b",
+            "parentCollection": "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+            "childCollection": "4200bc40-e94f-4fd4-9c9e-2277fb107aa9",
+            "hackoladeStyles": {
+                "GUID": "0da33387-8131-4cac-82d2-53e032bd86d4",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1649.3333333333333,
+                        "y": 1802.8333333333333
+                    },
+                    {
+                        "x": 1501.333333333333,
+                        "y": 1802.8333333333333
+                    },
+                    {
+                        "x": 1501.333333333333,
+                        "y": 1741.166666666666
+                    },
+                    {
+                        "x": 1353.333333333333,
+                        "y": 1741.166666666666
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Contiene.idCompra INT NOT NULL to Compra.idCompra INT NOT NULL",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "2ef8a707-fe80-45f6-940e-02da2ff518cc",
+                    "f75338a9-ddbf-489e-94c4-903080d99885"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "4200bc40-e94f-4fd4-9c9e-2277fb107aa9",
+                    "0359f74a-1116-4187-abd0-0c085724a556"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "946fdca1-55f6-440b-be71-ec51868ae1ba",
+            "parentCollection": "2ef8a707-fe80-45f6-940e-02da2ff518cc",
+            "childCollection": "4200bc40-e94f-4fd4-9c9e-2277fb107aa9",
+            "hackoladeStyles": {
+                "GUID": "a71c0f21-39ee-4975-9424-9fec0d06fc52",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1786.8333333333333,
+                        "y": 1729.3333333333333
+                    },
+                    {
+                        "x": 1786.8333333333333,
+                        "y": 1655.155479059094
+                    },
+                    {
+                        "x": 1786.4188181296634,
+                        "y": 1655.155479059094
+                    },
+                    {
+                        "x": 1786.4188181296634,
+                        "y": 1580.9776247848547
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk Compra.idUsuario INT NOT NULL to Usuario.Telefono INT NOT NULL",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                    "408d5be1-3287-48cc-a2ac-95180c0bcf86"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "2ef8a707-fe80-45f6-940e-02da2ff518cc",
+                    "609e1583-afd4-40d2-915c-0c6898eb2cff"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "8bdfc801-9359-40b4-9624-dbdd4e78bf5c",
+            "parentCollection": "05bd1d97-9456-4183-a657-09e6aa4cc097",
+            "childCollection": "2ef8a707-fe80-45f6-940e-02da2ff518cc",
+            "hackoladeStyles": {
+                "GUID": "43b00a0e-8eb8-4008-ad3e-fa231e573070",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1658.4188181296634,
+                        "y": 1514.9776247848547
+                    },
+                    {
+                        "x": 1516.9374641422837,
+                        "y": 1514.9776247848547
+                    },
+                    {
+                        "x": 1516.9374641422837,
+                        "y": 1359.933734939759
+                    },
+                    {
+                        "x": 1375.4561101549043,
+                        "y": 1359.933734939759
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "4c2db67c-fe2f-4661-9ee7-12d3c0907fec": "Registro",
+        "239e6de5-2bd0-428a-a6aa-61bbb349a472": "idRegistro NOT NULL AUTO_INCREMENT",
+        "45ddbeaf-b10e-4883-82e7-d13085061568": "Username VARCHAR(255) NOT NULL",
+        "7f6bbefe-5d27-4f07-a1e6-f0cf3a178fbb": "Password VARCHAR(20) NOT NULL",
+        "f6764b3c-5dc8-40af-8b84-1c6d26d52d30": "Rol ENUM {'Administrador','Cliente'} NOT NULL",
+        "05bd1d97-9456-4183-a657-09e6aa4cc097": "Usuario",
+        "efbe9541-5e80-45aa-ab6f-4e087b264400": "idUsuario NOT NULL AUTO INCREMENT",
+        "947cecff-0a81-455d-a23a-5d788116dd2e": "OT NULL to Usuario.New FieldidUsuario NOT NULL AUTO INCREMENT",
+        "8bc42c50-a750-4d36-aa88-22951ec9dbb7": "idUsuario NOT NULL",
+        "43946bb4-fa62-4a2b-b20c-e513670a5dc1": "Nombre VARCHAR NOT NULL",
+        "72d22614-e655-45f4-a7b9-8ce70d2e2581": "Correo VARCHAR NOT NULL",
+        "408d5be1-3287-48cc-a2ac-95180c0bcf86": "Telefono INT NOT NULL",
+        "095c8a69-501f-4ae2-b423-6c5a1ceb1ef4": "Genero ENUM {'H'.'M'} NOT NULL",
+        "0d0b67e7-e331-4eda-86f2-f414cb39e880": "Edad",
+        "206060f8-ee54-4d43-b926-e0691cf2bf4c": "Reseña",
+        "25477e4a-01c8-4f54-adb8-594bf15fcff2": "idReseña INT NOT NULL",
+        "2cd3aed0-7578-4319-b6f6-b51e27e15a75": "New Relationship",
+        "2ef8a707-fe80-45f6-940e-02da2ff518cc": "Compra",
+        "f75338a9-ddbf-489e-94c4-903080d99885": "idCompra INT NOT NULL",
+        "39a1f7e3-1d93-416a-981b-26d009550689": "idUsuario NOT NULL",
+        "d660695d-780d-4a2f-82fc-b9c927bff0a2": "Comentarios VARCHAR(255)",
+        "da8264fd-5055-4fcf-9d08-91327bd0c065": "Valoraciones ENUM {'MuyMala','Mala','Neutra',Buena','MuyBuena'} NOT NULL",
+        "3b14d4fb-f435-4ffc-b4ed-7f97fa763524": "fk Reseña.idUsuario NOT NULL to Usuario.idUsuario NOT NULL AUTO INCREMENT",
+        "91715a7a-19af-440e-81ff-1bcdc854dc0e": "Producto",
+        "2e051156-8053-4272-b187-58b4d2393fa1": "idProducto INT NOT NULL",
+        "a377f575-d3bf-4494-884a-7ba587bb1a18": "idProducto INT NOT NULL",
+        "4e8ee2d5-ddeb-4af7-b9f7-7111e3f0dfc8": "fk Reseña.idProducto INT NOT NULL to Producto.idProducto INT NOT NULL",
+        "c45b0e3d-93a7-4bc3-b873-d3d1c732ea3e": "Precio INT NOT NULL",
+        "d08e1090-171f-4962-ba34-82b0cae59ea5": "Imagen BLOB",
+        "85de0885-c399-422b-b57b-342a6caea89a": "Tipo ENUM {'Articulo'.'Diseño'} NOT NULL",
+        "42d3070a-dc2f-4309-ae77-ebc7eec5a00b": "Cantidad INT NOT NULL",
+        "0098fad0-21fd-4d8f-8013-060f086258f2": "Seccion ENUM {'Hombre','Mujer','Niño'} NOT NULL",
+        "80bfd961-39e1-4ada-a0d1-539659c018e7": "Atuendos ENUM {'Sudaderas','Camisetas','Calcetines','Pantalonetas','Leggins',Zapatillas'}'",
+        "a7e940a5-07c9-4042-9ca5-597f1c393076": "Talla_Unica",
+        "5e148546-c330-430c-be7d-58145128baf2": "Paquete",
+        "f2e378b9-7b52-4206-ad4c-b291feb57ee5": "idPaquete INT NOT NULL",
+        "4e701b1d-942f-4277-b9cd-8336d3d61e3a": "idProducto INT NOT NULL",
+        "6e4eeacc-9a4b-497f-91eb-baa96fcc11cc": "fk Paquete.idProducto INT NOT NULL to Producto.idProducto INT NOT NULL",
+        "65638d12-924b-41e0-b459-ce1f90956e51": "Precio INT NOT NULL",
+        "4200bc40-e94f-4fd4-9c9e-2277fb107aa9": "Contiene",
+        "0359f74a-1116-4187-abd0-0c085724a556": "idCompra INT NOT NULL",
+        "4d90991d-0838-4d94-bb95-6a946aab381f": "idProducto INT NOT NULL",
+        "a1e61d21-f370-4025-9272-c2293c57238b": "fk Contiene.idProducto INT NOT NULL to Producto.idProducto INT NOT NULL",
+        "4d8ae404-d923-4919-bcdc-4858304c1578": "Cantidad INT NOT NULL",
+        "946fdca1-55f6-440b-be71-ec51868ae1ba": "fk Contiene.idCompra INT NOT NULL to Compra.idCompra INT NOT NULL",
+        "609e1583-afd4-40d2-915c-0c6898eb2cff": "idUsuario INT NOT NULL",
+        "7323333e-aaa6-4921-8245-055fd3ef1c98": "FechaCompra DATE NOT NULL",
+        "8bdfc801-9359-40b4-9624-dbdd4e78bf5c": "fk Compra.idUsuario INT NOT NULL to Usuario.Telefono INT NOT NULL",
+        "73ec8920-46c7-4695-bcf5-513dd45f9582": "CostoTotal DOUBLE NOT NULL",
+        "dcdbd11f-174a-431f-8151-c1617c4341fb": "Envio"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "93bcd62b-b796-4a76-801d-11a627d09c4a"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "56cc8623-cc5b-4318-bce0-b73c62622ff4"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "ee8454ce-4acf-4017-bb21-0e18c6880420"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVendor": "JSON",
+    "dbVersion": "2019-09",
+    "appTarget": "JSON",
+    "creationTS": "2024-04-15T04:59:52.861Z",
+    "GUID": "c8654c2c-e7f0-4492-8d6b-9cf46a1bb318",
+    "isLineageEnabled": false,
+    "lastModifTS": "2024-04-15T15:58:33.275Z",
+    "persistenceSchemaVersion": "7",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "7.3.8"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "4c2db67c-fe2f-4661-9ee7-12d3c0907fec",
+                        "x": 1046,
+                        "y": 1078,
+                        "width": 391,
+                        "height": 123,
+                        "color": {
+                            "hex": "#3f51b5"
+                        }
+                    },
+                    {
+                        "GUID": "05bd1d97-9456-4183-a657-09e6aa4cc097",
+                        "x": 1058.4561101549043,
+                        "y": 1289.433734939759,
+                        "width": 317,
+                        "height": 141,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "206060f8-ee54-4d43-b926-e0691cf2bf4c",
+                        "x": 348.76592082616185,
+                        "y": 1253.728055077453,
+                        "width": 564,
+                        "height": 227,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "2ef8a707-fe80-45f6-940e-02da2ff518cc",
+                        "x": 1658.4188181296634,
+                        "y": 1448.9776247848547,
+                        "width": 256,
+                        "height": 132,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "91715a7a-19af-440e-81ff-1bcdc854dc0e",
+                        "x": 853.3333333333331,
+                        "y": 1654.666666666666,
+                        "width": 500,
+                        "height": 173,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "5e148546-c330-430c-be7d-58145128baf2",
+                        "x": 1171.9999999999986,
+                        "y": 1942.6666666666663,
+                        "width": 291,
+                        "height": 200,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "4200bc40-e94f-4fd4-9c9e-2277fb107aa9",
+                        "x": 1649.3333333333333,
+                        "y": 1729.3333333333333,
+                        "width": 275,
+                        "height": 147,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "dcdbd11f-174a-431f-8151-c1617c4341fb",
+                        "x": 1716.0000000000002,
+                        "y": 1190.6666666666665,
+                        "width": 174,
+                        "height": 102,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "4c2db67c-fe2f-4661-9ee7-12d3c0907fec"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "05bd1d97-9456-4183-a657-09e6aa4cc097"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "206060f8-ee54-4d43-b926-e0691cf2bf4c"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "2ef8a707-fe80-45f6-940e-02da2ff518cc"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "91715a7a-19af-440e-81ff-1bcdc854dc0e"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "5e148546-c330-430c-be7d-58145128baf2"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "4200bc40-e94f-4fd4-9c9e-2277fb107aa9"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "dcdbd11f-174a-431f-8151-c1617c4341fb"
+                    }
+                ],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
