@@ -1,0 +1,354 @@
+use Proyecto_DB;
+
+db.createCollection("Usuario", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Usuario",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "idUsuario": {
+                    "bsonType": "objectId"
+                },
+                "nombre": {
+                    "bsonType": "string"
+                },
+                "correo": {
+                    "bsonType": "string"
+                },
+                "telefono": {
+                    "bsonType": "number"
+                },
+                "genero": {
+                    "bsonType": "string",
+                    "enum": [
+                        "H",
+                        "M"
+                    ]
+                },
+                "edad": {
+                    "bsonType": "number"
+                },
+                "Registro": {
+                    "bsonType": "array",
+                    "additionalItems": true,
+                    "items": {
+                        "bsonType": "object",
+                        "additionalProperties": false,
+                        "patternProperties": {
+                            "idRegistro": {
+                                "bsonType": "objectId"
+                            },
+                            "username": {
+                                "bsonType": "string"
+                            },
+                            "password": {
+                                "bsonType": "string"
+                            },
+                            "rol": {
+                                "bsonType": "string",
+                                "enum": [
+                                    "Administrador",
+                                    "Cliente"
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "idUsuario",
+                "nombre",
+                "correo",
+                "telefono",
+                "genero"
+            ]
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+
+
+
+db.createCollection("Compra", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Compra",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "idCompra": {
+                    "bsonType": "objectId"
+                },
+                "idUsuario": {
+                    "bsonType": "objectId"
+                },
+                "fechaCompra": {
+                    "bsonType": "date"
+                },
+                "costoTotal": {
+                    "bsonType": "number"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "idCompra",
+                "idUsuario",
+                "fechaCompra",
+                "costoTotal"
+            ]
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+
+
+
+db.createCollection("Municipio", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Municipio",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "codigo": {
+                    "bsonType": "number"
+                },
+                "nombre": {
+                    "bsonType": "string"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "codigo",
+                "nombre"
+            ]
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+
+
+
+db.createCollection("Producto", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Producto",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "idProducto": {
+                    "bsonType": "objectId"
+                },
+                "precio": {
+                    "bsonType": "number"
+                },
+                "nombre": {
+                    "bsonType": "string"
+                },
+                "descripcion": {
+                    "bsonType": "string"
+                },
+                "imagen": {
+                    "bsonType": "string"
+                },
+                "tipo": {
+                    "bsonType": "string",
+                    "enum": [
+                        "Articulo",
+                        "Diseno"
+                    ]
+                },
+                "cantidad": {
+                    "bsonType": "number"
+                },
+                "seccion": {
+                    "bsonType": "string",
+                    "enum": [
+                        "Hombre",
+                        "Mujer",
+                        "Nino"
+                    ]
+                },
+                "atuendos": {
+                    "bsonType": "string",
+                    "enum": [
+                        "Sudaderas",
+                        "Camisetas",
+                        "Calcetines",
+                        "Pantalonetas",
+                        "Leggins",
+                        "Zapatillas"
+                    ]
+                },
+                "tallas": {
+                    "bsonType": "object",
+                    "additionalProperties": false
+                },
+                "esPaquete": {
+                    "bsonType": "bool"
+                },
+                "articulos": {
+                    "bsonType": "object",
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "idProducto",
+                "precio",
+                "nombre",
+                "descripcion",
+                "tipo",
+                "cantidad",
+                "seccion",
+                "atuendos",
+                "esPaquete"
+            ]
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+
+
+
+db.createCollection("Resena", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Resena",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "idResena": {
+                    "bsonType": "objectId"
+                },
+                "idUsuario": {
+                    "bsonType": "objectId"
+                },
+                "idProducto": {
+                    "bsonType": "objectId"
+                },
+                "comentarios": {
+                    "bsonType": "string"
+                },
+                "valoraciones": {
+                    "bsonType": "string",
+                    "enum": [
+                        "MuyMala",
+                        "Mala",
+                        "Neutra",
+                        "Buena",
+                        "MuyBuena"
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "idResena",
+                "idUsuario",
+                "idProducto"
+            ]
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+
+
+
+db.createCollection("Contiene", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Contiene",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "idCompra": {
+                    "bsonType": "objectId"
+                },
+                "idProducto": {
+                    "bsonType": "objectId"
+                },
+                "cantidad": {
+                    "bsonType": "number"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "idCompra",
+                "idProducto",
+                "cantidad"
+            ]
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+db.createCollection("envio", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "envio",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "idEnvio": {
+                    "bsonType": "objectId"
+                },
+                "idCompra": {
+                    "bsonType": "objectId"
+                },
+                "codigoPostal": {
+                    "bsonType": "number"
+                },
+                "fechaEnvio": {
+                    "bsonType": "date"
+                },
+                "direccion": {
+                    "bsonType": "string"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "idEnvio",
+                "idCompra",
+                "codigoPostal",
+                "fechaEnvio",
+                "direccion"
+            ]
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
